@@ -77,7 +77,7 @@ public class Bucles {
         System.out.println("¿Cuanto vas a pagar?:");
         importe = Integer.parseInt(sc.nextLine());
         cuotaIva = iva(tipoIva, importe);
-        importeDescuento = descuento(importe)
+        importeDescuento = descuento(importe);
         System.out.println("Total:"+ (importe+cuotaIva-importeDescuento) + "********** IVA: " + iva(tipoIva, importe) + "********** Descuento: " + descuento(importe));
 
         /* "<total factura> ********* <cuota iva> ********** <descuento>"
