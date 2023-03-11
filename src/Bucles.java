@@ -80,12 +80,29 @@ public class Bucles {
         importeDescuento = descuento(importe);
         System.out.println("Total:"+ (importe+cuotaIva-importeDescuento) + "********** IVA: " + iva(tipoIva, importe) + "********** Descuento: " + descuento(importe));
 
-        /* "<total factura> ********* <cuota iva> ********** <descuento>"
-        
-        Xtotal factura = 1000 +X100 -X100 = 1000dfasdfasdfasdfasdfasdfasdfasdasdf
-        X<total factura> = importe + Xiva - Xdescuento*/
-
     }
+
+    public static String menu(){
+        String menu;
+
+        menu = sc.next();
+        return menu;
+    }
+
+    public static int precio(){
+        int precio;
+
+        precio = sc.nextInt();
+        return precio;
+    }
+
+
+    public static void Restaurante(){
+        do{
+            
+        }while(precio() != 0);
+    }
+    
 
     public static void main(String[] args) {
         int opcion;
