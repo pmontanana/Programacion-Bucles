@@ -56,7 +56,7 @@ public class Bucles {
     public static double descuento(int base) {
         double descontado = 0;
 
-        if (base > 100000 ) {
+        if (base > 100000) {
             descontado = base * 0.2;
         } else if (base > 10000) {
             descontado = base * 0.15;
@@ -67,7 +67,7 @@ public class Bucles {
         return descontado;
     }
 
-    public static void ivaDescuentos(){
+    public static void ivaDescuentos() {
         int importe;
         String tipoIva;
         double cuotaIva, importeDescuento;
@@ -78,31 +78,55 @@ public class Bucles {
         importe = Integer.parseInt(sc.nextLine());
         cuotaIva = iva(tipoIva, importe);
         importeDescuento = descuento(importe);
-        System.out.println("Total:"+ (importe+cuotaIva-importeDescuento) + "********** IVA: " + iva(tipoIva, importe) + "********** Descuento: " + descuento(importe));
+        System.out.println("Total:" + (importe + cuotaIva - importeDescuento) + "********** IVA: "
+                + iva(tipoIva, importe) + "********** Descuento: " + importeDescuento);
 
     }
 
-    public static String menu(){
+    public static String menu() {
         String menu;
 
-        menu = sc.next();
+        menu = sc.nextLine();
         return menu;
     }
 
-    public static int precio(){
+    public static int precio() {
         int precio;
 
-        precio = sc.nextInt();
+        precio = Integer.parseInt(sc.nextLine()); // resolver problema buffer
         return precio;
     }
 
+    public static String guiones(String menu, int precio) {
+        String guions = "";
 
-    public static void Restaurante(){
-        do{
-            
-        }while(precio() != 0);
+        for (int i = 0; i < 48 - menu.length() - Integer.toString(precio).length(); i++) {
+            guions = guions + "-";
+        }
+        return guions;
     }
-    
+
+    public static void restaurante() {
+        String menus, guion;
+        int importe, total = 0;
+
+        do {
+            System.out.println("Dime tu menu: ");
+            menus = menu();
+            System.out.println("Dime un precio: ");
+            importe = precio();
+            if (importe != 0) {
+                System.out.println("Tu ticket es: ");
+                guion = guiones(menus, importe);
+                System.out.println(menus + " " + guion + " " + importe);
+                total = total + importe;
+            }
+
+        } while (importe != 0);
+
+        guion = guiones("Total", total);
+        System.out.println("Total" + " " + guion + " " + total);
+    }
 
     public static void main(String[] args) {
         int opcion;
@@ -125,7 +149,7 @@ public class Bucles {
                     break;
 
                 case 3:
-                    // restaurante();
+                    restaurante();
                     break;
 
                 case 4:
