@@ -14,7 +14,6 @@ public class Bucles {
             System.out.println("Introduce segundo número");
             num2 = sc.nextInt();
         } while (Math.abs(num1 - num2) != 25 || num1 < 0 || num2 < 0);
-        System.out.println("El intervalo es entre " + num1 + " y " + num2);
         if (num1 > num2) {
             mayor = num1;
             menor = num2;
@@ -22,6 +21,7 @@ public class Bucles {
             mayor = num2;
             menor = num1;
         }
+        System.out.println("El intervalo es entre " + menor + " y " + mayor);
 
         do {
             System.out.println("Introduce numero (" + leidos + ") :");
